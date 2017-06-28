@@ -24,7 +24,14 @@ var app = {
 
         //Request the location permissions (used only on android)
         var permissions = cordova.plugins.permissions;
-        permissions.requestPermission(permissions.ACCESS_COARSE_LOCATION, function(){console.log("PERMISSION SUCCESS")},function(){console.log("PERMISSION FAILURE")});
+        permissions.requestPermission(permissions.ACCESS_COARSE_LOCATION,
+            function(){
+                console.log("[Beco Example App] Location Permission granted!");
+            },
+            function(){
+                console.log("[Beco Example App] Location Permission denied!");
+            }
+        );
 
         //Get the version and display it on the version label.
         BecoCordovaPlugin.getVersion(function(version){
@@ -75,10 +82,9 @@ app.initialize();
 // onReportError - Called when an SDK error occurs
 function onReportError(errorData){
     //Error has occurred, display the error.
-    var statusMessage = "API Error: "+errorData;
-    $("#errorLabel").text("API Error: ["+errorData.errorCode+"] "+errorData.errorString);
-    //console.log("[Beco Example App] "+statusMessage);
-    console.log(errorData);
+    var statusMessage = "API Error: "+errorData.errorString;
+    $("#errorLabel").text(statusMessage);
+    console.log("[Beco Example App] "+statusMessage);
 }
 
 // onReceiveLocationData - Called when the SDK updates the location of a handset
@@ -95,25 +101,20 @@ function onReceiveLocationData(locationData){
     }
 
     $("#statusLabel").html("<table>"+locationDataTable+"</table>");
-    //console.log("[Beco Example App] Status: Received Location: "+locationData);
-    console.log(locationData);
+    console.log("[Beco Example App] Status: Received Place Data: "+locationData.place.placeName);
 }
 
 // onReportAppHit - Called when a beacon is first detected ("hit")
 function onReportAppHit(data){
     //App (Beacon) Hit
-    //$("#statusLabel").text("Status: Hit Beacon "+becoId);
-    //console.log("[Beco Example App] Status: Hit Beacon: "+becoId);
-    console.log(data);
+    console.log("[Beco Example App] Status: Hit Beacon: "+data.becoId);
 }
 
 // onReportStartScanComplete - Called when the scan is started successfully
 function onReportStartScanComplete(data){
     //Start Scan complete, get the status and display it
-    var statusMessage = "Scan Started";
-    $("#statusLabel").text("Status: ["+data.statusCode+"] "+data.statusString);
-    //console.log("[Beco Example App] Status: "+statusMessage);
-    console.log(data);
+    $("#statusLabel").text("Status: "+data.statusString);
+    console.log("[Beco Example App] Status: "+data.statusString);
 }
 
 ////////////////////////////////////////////////
