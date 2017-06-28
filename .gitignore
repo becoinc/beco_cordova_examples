@@ -1,0 +1,6 @@
+.DS_Store
+*.xcuserdatad
+resources/signing
+node_modules
+platforms
+plugins
