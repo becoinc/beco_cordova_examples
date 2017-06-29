@@ -1,6 +1,6 @@
 {
-    "name": "com.beco.cordova.exampleone",
-    "displayName": "Cordova Example",
+    "name": "com.beco.cordova.examplethree",
+    "displayName": "Kitchen Example",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that uses the Beco Cordova API.",
     "main": "index.js",
@@ -10,15 +10,13 @@
         "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",
         "cordova-plugin-android-permissions": "^1.0.0",
-        "cordova-plugin-console": "^1.0.7",
         "cordova-plugin-whitelist": "^1.3.2"
     },
     "cordova": {
         "plugins": {
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-console": {},
+            "beco-cordova-plugin": {},
             "cordova-plugin-android-permissions": {},
-            "beco-cordova-plugin": {}
+            "cordova-plugin-whitelist": {}
         },
         "platforms": [
             "android",
