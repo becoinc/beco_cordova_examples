@@ -18,9 +18,9 @@ Cordova can be installed using `npm install -g cordova`.
 Install the [Beco Cordova SDK](https://github.com/becoinc/beco_cordova_sdk) into the selected example using: 
 `cordova plugin add https://github.com/becoinc/beco_cordova_sdk.git#master`
 
+6. Follow the [instructions](#instructions) below.
 
-
-### Instructions
+### <a name="#instructions"></a> Instructions ###
 The steps to run the examples included in this repository are as follows:
 
 *1.* Insert your SDK Credentials into `www/js/index.js`, the root javascript file for the project you would like to run.
@@ -35,7 +35,35 @@ and [Android Project Configuration](https://github.com/becoinc/beco_cordova_sdk#
 on the Cordova SDK's User Guide.
 
 *4.* Open the platform-specific project for the platform you are testing on, and build/run the project on a device 
-with bluetooth capabilities and a space with beacons configured.
+with bluetooth capabilities and a space with beacons configured. Refer to [Android](#android) or [iOS](#iOS)
+sections as appropriate.
+
+### <a name="#android"></a> Android ###
+This section covers building the actual Android app using Android Studio v2.3.3 once Cordova has generated the project.
+Other Android specific developer details are covered as well.
+
+The cordova examples use the Gradle build system with the relevant Android plugins pre-configured. Unfortunately,
+they do not pre-configure the gradle wrapper scripts, so that setup is separate. Android Studio will offer
+to do it for you on import.
+
+#### Android Studio Project Setup/Use ####
+
+These directions were tested using *Android Studio v2.3.3*.
+
+You can import the generated project e.g. `example/platforms/android/` into Android Studio by pointing 
+to the `build.gradle` file in that project folder.
+
+The [Android Project Configuration](https://github.com/becoinc/beco_cordova_sdk#android-project-configuration) section
+of the Beco Cordova SDK User's Guide discusses using the `cordova-plugin-android-permissions` cordova plugin
+to obtain app permissions on Android. *This has already been done in the example apps.*
+
+We also recommend allowing Android Studio to upgrade the example project. 
+
+### <a name="#iOS"></a> iOS ###
+
+This section covers building the actual iOS app using XCode once Cordova has generated the project.
+Other iOS specific details are covered as well.
+
 
 ### Main Example
 The main example is in the `example` directory.
