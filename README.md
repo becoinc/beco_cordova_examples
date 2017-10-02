@@ -2,7 +2,19 @@
 Example apps for iOS and Android using the Beco Cordova SDK. 
 Main SDK repository and User's Guide located at [https://github.com/becoinc/beco_cordova_sdk](https://github.com/becoinc/beco_cordova_sdk).
 
-## Quick Start ##
+## Prereqs ##
+
+Software you must have installed:
+
+1. XCode 9 with command line tools.
+
+2. Android Studio v2.3.3 or later.
+
+3. npm (see [quick start](#quickstart)) and associated modules.
+
+4. cordova (see [quick start](#quickstart))
+
+## <a name="#quickstart"></a> Quick Start ##
 
 1. Install [npm](https://www.npmjs.com/get-npm) or verify it is available on your machine. On macOS, we use
 [Home Brew](https://brew.sh/) to install npm. 
@@ -10,17 +22,19 @@ Main SDK repository and User's Guide located at [https://github.com/becoinc/beco
 2. Install [cordova](http://cordova.apache.org/) or verify that version `v7.0.1` is available on your system.
 Cordova can be installed using `npm install -g cordova`.
 
-3. Verify that `cordova` and `npm` are in your `PATH`.
+3. Install [ios-deploy](https://github.com/phonegap/ios-deploy) using `npm install -g ios-deploy`.
 
-4. Select one of the examples to work with: we include `example`, `kitchen` and `minimum`.
+4. Verify that `cordova` and `npm` are in your `PATH`.
 
-5. cd to the example folder and 
+5. Select one of the examples to work with: we include `example`, `kitchen` and `minimum`.
+
+6. cd to the example folder and 
 Install the [Beco Cordova SDK](https://github.com/becoinc/beco_cordova_sdk) into the selected example using: 
 `cordova plugin add https://github.com/becoinc/beco_cordova_sdk.git#master`
 
-6. Follow the [instructions](#instructions) below.
+7. Follow the [instructions](#instructions) below.
 
-### <a name="#instructions"></a> Instructions ###
+## <a name="#instructions"></a> Instructions ##
 The steps to run the examples included in this repository are as follows:
 
 *1.* Insert your SDK Credentials into `www/js/index.js`, the root javascript file for the project you would like to run.
@@ -64,46 +78,64 @@ We also recommend allowing Android Studio to upgrade the example project.
 This section covers building the actual iOS app using XCode once Cordova has generated the project.
 Other iOS specific details are covered as well.
 
+Cordova generates _both_ an XCode workspace and project. This example and the Beco Cordova SDK were 
+tested with XCode 9 and Swift 3.2.
 
-### Main Example
+#### XCode 9 Setup 
+
+1. Open the project in XCode using `open platforms/ios/Beco\ Cordova\ Example.xcworkspace` if you have XCode
+installed already.
+
+2. Setup your signing profile and certificates in the `General` section of the project settings.
+![XCode Signing Setup](./readme-images/screenshot-xcode-signing.png) 
+
+3. Configure the projects by following the instructions in the 
+[iOS Project Configuration](https://github.com/becoinc/beco_cordova_sdk#ios-project-configuration) section.
+
+4. After configuring the project you can do a command line build from by 
+running the shell script: `./example/platforms/ios/cordova/build`.
+
+
+
+## Main Example ##
 The main example is in the `example` directory.
 Once you build and run the example application on a phone and configure your Beco Beacons in your space, 
 you should be able to walk around the space and view realtime location data. This example demonstrates error 
 logging capabilities and uses all of the events that the SDK provides, and is intended as a starting point for 
 building an application with the Beco Cordova SDK.
 
-#### Screenshots
+### Screenshots
 ![Screenshot 1](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-1.PNG) 
 ![Screenshot 2](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-2.PNG)
 
-### Minimal Example
+## Minimal Example ##
 A second example is in the `minimal` directory. This example demonstrates the bare minimum required to get location 
 polling working with the Beco Cordova SDK. This example contains no error checking or logging.
 
-#### Screenshots
+### Screenshots
 ![Screenshot 5](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-5.PNG)
  ![Screenshot 6](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-6.PNG)
 
-### Kitchen Example
+## Kitchen Example ##
 The third example, in the `kitchen` directory, consists of a minimal program that will display a "Yes/No" text
 based on whether the user is in a place with a `placeName` of `Kitchen`.
 
 This demonstrates a simple (albeit contrived) usage of location data by checking the object data 
 returned by the `onReceiveLocationData` event.
 
-#### Screenshots
+### Screenshots
 
 ![Screenshot 3](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-3.PNG) 
 ![Screenshot 4](https://raw.githubusercontent.com/becoinc/beco_cordova_examples/master/readme-images/screenshot-4.PNG)
 
-## Appendix
-#### License
+## Appendix ##
+### License
 
 This document, the Beco Cordova SDK and the included sample application are subject to the Beco SDK license agreement. 
 A copy of this agreement is available at https://www.beco.io/sdk-license-agreement.pdf, and has been 
 included in this repository in `LICENSE.md`.
 
-#### Export Statement
+### Export Statement
 You understand that the Software may contain cryptographic functions that may be subject to export restrictions, 
 and you represent and warrant that you are not located in a country that is subject to United States export
 restriction or embargo, including Cuba, Iran, North Korea, Sudan, Syria or the Crimea region, and that you are 
