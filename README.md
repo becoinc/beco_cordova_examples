@@ -95,7 +95,7 @@ installed already.
 4. After configuring the project you can do a command line build from by 
 running the shell script: `./example/platforms/ios/cordova/build`.
 
-
+5. Alternately, you can build within XCode.
 
 ## Main Example ##
 The main example is in the `example` directory.
