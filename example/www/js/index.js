@@ -47,7 +47,7 @@ var app = {
         BecoCordovaPlugin.onReportStartScanComplete(onReportStartScanComplete);
 
         console.log("[Beco Example App] Registering handset...");
-        BecoCordovaPlugin.registerHandset(null,username,null,null,
+        BecoCordovaPlugin.registerHandset(null,null,null,null,
         function(message){
             //Success. Once the handset has been registered:
             console.log("[Beco Example App] Registered handset.");
