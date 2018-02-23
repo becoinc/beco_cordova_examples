@@ -8,7 +8,7 @@ Software you must have installed:
 
 1. XCode 9 with command line tools.
 
-2. Android Studio v2.3.3 or later.
+2. Android Studio v3.0.1 or later.
 
 3. npm (see [quick start](#quickstart)) and associated modules.
 
@@ -17,9 +17,9 @@ Software you must have installed:
 ## <a name="#quickstart"></a> Quick Start ##
 
 1. Install [npm](https://www.npmjs.com/get-npm) or verify it is available on your machine. On macOS, we use
-[Home Brew](https://brew.sh/) to install npm. 
+[Home Brew](https://brew.sh/) to install npm. We are using npm version `5.6.0` as part of node `9.5.0`.
 
-2. Install [cordova](http://cordova.apache.org/) or verify that version `v7.0.1` is available on your system.
+2. Install [cordova](http://cordova.apache.org/) or verify that version `v8.0.0` is available on your system.
 Cordova can be installed using `npm install -g cordova`.
 
 3. Install [ios-deploy](https://github.com/phonegap/ios-deploy) using `npm install -g ios-deploy`.
@@ -62,7 +62,7 @@ to do it for you on import.
 
 #### Android Studio Project Setup/Use ####
 
-These directions were tested using *Android Studio v2.3.3*.
+These directions were tested using *Android Studio v3.0.1*.
 
 You can import the generated project e.g. `example/platforms/android/` into Android Studio by pointing 
 to the `build.gradle` file in that project folder.
