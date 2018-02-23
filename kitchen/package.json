@@ -7,8 +7,8 @@
     "author": "Beco, Inc",
     "dependencies": {
         "beco-cordova-plugin": "git+https://github.com/becoinc/beco_cordova_sdk.git#master",
-        "cordova-android": "^6.2.3",
-        "cordova-ios": "^4.4.0",
+        "cordova-android": "^7.0.0",
+        "cordova-ios": "^4.5.4",
         "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-whitelist": "^1.3.2"
     },
