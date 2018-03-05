@@ -34,7 +34,7 @@
         <icon density="xhdpi" src="res/icons/android/mipmap-xhdpi/ic_launcher.png" />
         <icon density="xxhdpi" src="res/icons/android/mipmap-xxhdpi/ic_launcher.png" />
         <icon density="xxxhdpi" src="res/icons/android/mipmap-xxxhdpi/ic_launcher.png" />
-        <preference name="android-minSdkVersion" value="18" />
+        <preference name="android-minSdkVersion" value="22" />
         <preference name="android-targetSdkVersion" value="23" />
     </platform>
     <splash height="480" src="res/launch/0_Beco_App_Loading_320x480_v1.png" width="320" />
@@ -47,10 +47,9 @@
     <splash height="1536" src="res/launch/0_Beco_App_Loading_2048x1536_v1.png" width="2048" />
     <splash height="1024" src="res/launch/0_Beco_App_Loading_768x1024_v1.png" width="768" />
     <splash height="1242" src="res/launch/0_Beco_App_Loading_2208x1242_v1.png" width="2208" />
-    <engine name="android" spec="^6.2.3" />
-    <engine name="ios" spec="^4.4.0" />
     <plugin name="beco-cordova-plugin" spec="git+https://github.com/becoinc/beco_cordova_sdk.git#master" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
-    <plugin name="cordova-plugin-console" spec="^1.0.7" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>
